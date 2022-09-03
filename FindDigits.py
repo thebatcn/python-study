@@ -6,5 +6,5 @@ for line in fobj.readlines():
         if s.isdigit():
             num += 1 
         
-print("There are {} ge shuzhi".format(num))
+print("There are {} 个数字".format(num))
 print(type(line))
