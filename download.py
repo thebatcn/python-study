@@ -20,5 +20,5 @@ def download(url,user_agent ='wswp',num_retries=2):
     
 url = 'https://www.baidu.com'
 
-download(url)
+print(download(url))
 
