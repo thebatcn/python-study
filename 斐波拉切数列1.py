@@ -6,7 +6,7 @@ def fib(n):
 
 
 def main():
-    for val in fib(20):
+    for val in fib(3):
         print(val)
 
 
