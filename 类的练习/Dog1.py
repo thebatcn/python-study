@@ -1,4 +1,4 @@
-class Dog():
+class Dog:
     """模拟小狗的简单测试"""
 
     def __init__(self,name,age) -> None:
