@@ -15,4 +15,4 @@ def fbl(n): #斐波拉切数列
     return fb
 
 
-print(fbl(1))
+print(fbl(100))
