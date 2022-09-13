@@ -1,3 +1,20 @@
+#                                           datetime库 
+#  类、属性 
+# timedelta  天、秒、微秒、毫秒、小时、分钟、周数     ,实例属性 days,seconds,microseconds，方法：total_seconds
+# 
+# zoneinfo
+#   timezone
+# time    时、分、秒、微秒、时区、fold 
+# date   年、月、日
+#   datetime  年、月、日、时、分、秒、微妙、时区、fold
+
+#共同方法
+# date.fromisoformat()
+# isoformat()
+# strftime()
+# replace()，参数为空，返回原值。通过关键字参数赋值后，返回修改后的值
+
+
 import datetime
 import time
 from tkinter import ttk
