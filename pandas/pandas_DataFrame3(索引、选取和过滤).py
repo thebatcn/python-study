@@ -62,3 +62,22 @@ print(data1.iloc[:, :3][data1.three > 5])        #根据 data1.three >5 ,截取�
 data1['three']=[2,4,10,14]                      #重新赋值three列数值，验证one\two数据对齐
 print(data1)
 print(data1.iloc[:, :3][data1.three > 5])  
+
+#为了进行统一，如果轴索引含有整数，数据选取总会使用标签。为了更准确，请使用loc（标签）或iloc（整数）：
+#ser    
+    # 0    0.0
+    # 1    1.0
+    # 2    2.0
+
+# ser[:1]           按整数索引的，不包含右端值。所以是0行  这种情况容易产生歧义。
+# 0    0.0
+# dtype: float64
+
+# 
+# ser.loc[:1]       指明用标签索引，包含右端。索引是标签0,1行
+# 0    0.0
+# 1    1.0
+# dtype: float64
+# 
+# ser.iloc[:1]      指明按整数索引，不包含右端。只有左端0行
+# 0    0.0
