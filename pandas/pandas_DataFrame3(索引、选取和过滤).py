@@ -27,7 +27,7 @@ data = pd.DataFrame(
 
 data1 = data.copy()
 print(data)
-print(data['two'])
+print(data["two"])
 
 # obj[:2]选取的是行，0-1行。obj[2:3]是[2]行。如果列和行索引都设置一样名称，就可以看出obj[2]选取的是列[2]。
 #    1  2  3
@@ -35,11 +35,11 @@ print(data['two'])
 # 2  3  4  5
 # 3  6  7  8
 
-#另一种用法是通过布尔型DataFrame（比如下面这个由标量比较运算得出的）进行索引
-print(data<5)  #比较标量，得到一个布尔值DataFrame对象
-data[data<5] =0  #赋值，True的标量设置为0.
+# 另一种用法是通过布尔型DataFrame（比如下面这个由标量比较运算得出的）进行索引
+print(data < 5)  # 比较标量，得到一个布尔值DataFrame对象
+data[data < 5] = 0  # 赋值，True的标量设置为0.
 print(data)
-#这使得DataFrame的语法与NumPy二维数组的语法很像。
+# 这使得DataFrame的语法与NumPy二维数组的语法很像。
 
 # DataFrame的行的标签索引，我引入了特殊的标签运算符loc和iloc。
 # 它们可以让你用类似NumPy的标记，使用轴标签（loc）或整数索引（iloc），从DataFrame选择行和列的子集
@@ -49,35 +49,37 @@ print(data)
 # Utah        8    9     10    11
 # New York   12   13     14    15
 
-print('\n',data1)
-print(data1.loc['Utah',['two','three']])        #'Utah'行，列'two','three'的2个值：9,10
-print(data1.iloc[[2,0],[3,0,1]])                    #[2][0]行，[3,0,1]列交叉的值：11,8,9,3,0,1
+print("\n", data1)
+print(data1.loc["Utah", ["two", "three"]])  #'Utah'行，列'two','three'的2个值：9,10
+print(data1.iloc[[2, 0], [3, 0, 1]])  # [2][0]行，[3,0,1]列交叉的值：11,8,9,3,0,1
 
-print(data1.loc[:'Utah', 'two'])                #['Ohio']--['Utah']行，'two'列交叉值 1，5,9
+print(data1.loc[:"Utah", "two"])  # ['Ohio']--['Utah']行，'two'列交叉值 1，5,9
 print(data1)
 
-print(data1.iloc[:,:3])                          #所有行。:3表示0，1,2列
-print(data1.iloc[:, :3][data1.three > 5])        #根据 data1.three >5 ,截取了three列数据。前面one\two列数据舍弃，对齐three.
+print(data1.iloc[:, :3])  # 所有行。:3表示0，1,2列
+print(
+    data1.iloc[:, :3][data1.three > 5]
+)  # 根据 data1.three >5 ,截取了three列数据。前面one\two列数据舍弃，对齐three.
 
-data1['three']=[2,4,10,14]                      #重新赋值three列数值，验证one\two数据对齐
+data1["three"] = [2, 4, 10, 14]  # 重新赋值three列数值，验证one\two数据对齐
 print(data1)
-print(data1.iloc[:, :3][data1.three > 5])  
+print(data1.iloc[:, :3][data1.three > 5])
 
-#为了进行统一，如果轴索引含有整数，数据选取总会使用标签。为了更准确，请使用loc（标签）或iloc（整数）：
-#ser    
-    # 0    0.0
-    # 1    1.0
-    # 2    2.0
+# 为了进行统一，如果轴索引含有整数，数据选取总会使用标签。为了更准确，请使用loc（标签）或iloc（整数）：
+# ser
+# 0    0.0
+# 1    1.0
+# 2    2.0
 
 # ser[:1]           按整数索引的，不包含右端值。所以是0行  这种情况容易产生歧义。
 # 0    0.0
 # dtype: float64
 
-# 
+#
 # ser.loc[:1]       指明用标签索引，包含右端。索引是标签0,1行
 # 0    0.0
 # 1    1.0
 # dtype: float64
-# 
+#
 # ser.iloc[:1]      指明按整数索引，不包含右端。只有左端0行
 # 0    0.0
