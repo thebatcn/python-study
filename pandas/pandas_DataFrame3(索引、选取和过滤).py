@@ -59,7 +59,7 @@ print(data1)
 print(data1.iloc[:, :3])  # 所有行。:3表示0，1,2列
 print(
     data1.iloc[:, :3][data1.three > 5]
-)  # 根据 data1.three >5 ,截取了three列数据。前面one\two列数据舍弃，对齐three.
+)  # 首先选取所有行，0-2列的数据。再根据 data1.three >5 ,截取了three列数据。前面one\two列数据舍弃，对齐three.
 
 data1["three"] = [2, 4, 10, 14]  # 重新赋值three列数值，验证one\two数据对齐
 print(data1)
