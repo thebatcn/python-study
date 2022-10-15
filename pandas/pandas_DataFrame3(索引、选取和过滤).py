@@ -6,7 +6,7 @@ import pandas as pd
 obj = pd.Series(np.arange(5.0), index=["a", "b", "c", "d", "e"])
 print(obj)
 print(obj["b"])  # 选取'b'行，就1行，从0开始的。
-print(obj[2:4])  # a[2]和[3]，同列表一致，不包含右端值。
+print(obj[2:4])  # a[2]和[3]，同列表一致，不包含右端值。利用系统生成的索引，就同list一样，不包括右值。
 print(obj[["b", "a", "d"]])  # 选择多个用列表值
 print(obj[[1, 3]])  # 用系统数字索引。第2行，第4行。
 print(obj[obj < 2])  # 根据条件,obj数字小于2.
