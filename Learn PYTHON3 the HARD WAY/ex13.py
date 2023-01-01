@@ -9,4 +9,4 @@ print("Your third variable is:", third)
 
 in1 = input("This is from input: ")
 print(in1)
-print('type(first): ',type(first))
+print('type(first): ',type(first))  #命令行输入的内容的类型是字符串
