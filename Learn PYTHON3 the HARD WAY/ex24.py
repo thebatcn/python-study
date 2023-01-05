@@ -37,9 +37,9 @@ print(f"We 'd have {beans} beans, {jars} jars, and {crates} crates.")
 start_point = start_point / 10
 
 print("We can aslo do that this way:")
-formula = secret_formula(start_point)
+formula = secret_formula(start_point)   #formula 是(x,y,z)元组
 
 # this is an easy way to apply a list to a format string
-print("We'd have {} beans, {} jars, and {} crates.".format(*formula))
+print("We'd have {} beans, {} jars, and {} crates.".format(*formula))   #解包元组到变量
 
 
