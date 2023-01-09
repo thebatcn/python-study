@@ -10,11 +10,11 @@ def gold_room():
     else:
         dead("Man, learn to type a number.")
 
-        if how_much < 50:
-            print("Nice, you're not greedy you win!")
-            exit(0)
-        else:
-            dead("You greedy bastard!")
+    if how_much < 50:
+        print("Nice, you're not greedy you win!")
+        exit(0)
+    else:
+        dead("You greedy bastard!")
 
 def bear_room():
     print("There is a bear here.")
