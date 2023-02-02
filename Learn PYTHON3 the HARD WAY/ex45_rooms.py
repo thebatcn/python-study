@@ -52,6 +52,6 @@ class Bedroom(room):
 
     def go_to_bed(self):
         print("""是时间睡觉了 
-                你进入梦想。。。。。""")
+                你进入了梦想。。。。。""")
 
 

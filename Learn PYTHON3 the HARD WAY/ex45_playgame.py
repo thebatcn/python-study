@@ -22,7 +22,7 @@ theworld = ex45_world.The_outside_world()
 theworld.print_it()
 theworld.to_play()
 
-aroom = ex45_rooms.room()
+aroom = ex45_rooms.Bedroom()
 aroom.entry()
 b_room = ex45_rooms.Living_room()
 b_room.entry()
@@ -36,5 +36,5 @@ amap.maps['living_room']
 def afuct(var_one, var_two,
           var_three):
     pass
-
+aroom.go_to_bed()
 
