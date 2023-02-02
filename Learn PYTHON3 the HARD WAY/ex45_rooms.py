@@ -1,6 +1,7 @@
 """                                 室内场景类
 包括了几个房间的类,基于room类"""
 
+
 class room():
 
     # def print_it(self):
@@ -26,7 +27,7 @@ class Living_room(room):
 
     def Dining(self):
         print("Dining")
-    
+
 
 class Rest_Room(room):
 
@@ -35,6 +36,7 @@ class Rest_Room(room):
 
     def go_to_the_toilet(self):
         print("嘘嘘 or 咚咚")
+
 
 class Study(room):
 
@@ -53,5 +55,3 @@ class Bedroom(room):
     def go_to_bed(self):
         print("""是时间睡觉了 
                 你进入了梦想。。。。。""")
-
-
