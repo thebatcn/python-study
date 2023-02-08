@@ -34,10 +34,36 @@ class Engine():
 
         # while current_scene != last_scene:
         #     next_scene_name = current_scene.entry()
-        #     current_scene = self.scene_map.next_scene(next_scene_name)
+        #     current_scene = self.scene_map.next_scene(next_scene_name)  
 
         current_scene.entry()
 
+#  引擎理解       
+
+# 切换场景类
+
+# 1、字典 {名字：场景类}     2、初始化Map类，参数为”场景名字”
+# 3、
+# 函数 next_map(场景名字）
+# 返回 val = 字典[场景名字] 类
+
+# 4、函数 open_map
+# 返回
+# next_map(场景名字）
+
+
+
+
+
+# 具体场景类
+
+# 函数  enter()，返回  string 作为  场景名字
+
+
+# Engine  
+# Engine 包含 Map类
+
+# 函数  paly()  调用 enter()运行
 
 amap = Maps('study')
 play = Engine(amap)
