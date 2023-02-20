@@ -1,14 +1,7 @@
-def build_person(first, last, age=None):
-    """Return a dictionary of information
-    about a person.
-    """
-    person = {'first': first, 'last': last}
-    if age:
-     person['age'] = age
-    return person
-
-
-musician = build_person('jimi', 'hendrix', 27)
-print(musician)
-musician = build_person('janis', 'joplin')
-print(musician)
+values = int(input("输入一个数字 >"))
+# match values:
+#     case values if values in [ 1,2,3,4]:
+# 		print(values)
+# 	case _:
+# 		print("Greater than 4!")
+print(values)
