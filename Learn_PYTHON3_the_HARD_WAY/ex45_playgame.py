@@ -14,10 +14,10 @@ class Maps():
             'finish': ex45_rooms.Finish()}
 
     def __init__(self, start_scene):
-        self.start_scene_name = start_scene_name 
+        self.start_scene_name = start_scene
 
     def next_scene(self, scene_name):
-        val = Maps.maps.get(scene_name)
+        val = self.maps.get(scene_name)
         return val
 
     def opening_scene(self):
