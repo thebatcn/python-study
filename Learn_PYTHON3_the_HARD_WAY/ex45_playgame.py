@@ -11,6 +11,7 @@ class Maps():
             'rest_room': ex45_rooms.Rest_Room(),
             'study': ex45_rooms.Study(),
             'bedroom': ex45_rooms.Bedroom(),
+            'the_outside_world': ex45_world.The_outside_world(),
             'finish': ex45_rooms.Finish()}
 
     def __init__(self, start_scene):
@@ -30,6 +31,8 @@ class Engine():
 
     def play(self):
         current_scene = self.scene_map.opening_scene()
+        next_scene_name = current_scene.entry()
+        current_scene = self.scene_map.next_scene(next_scene_name)
         # last_scene = self.scene_map.next_scene('finish')
 
         # while current_scene != last_scene:
@@ -65,7 +68,7 @@ class Engine():
 
 # 函数  paly()  调用 enter()运行
 
-amap = Maps('study')
+amap = Maps('corridor')
 play = Engine(amap)
 play.play()
 # for a in amap.maps.keys():

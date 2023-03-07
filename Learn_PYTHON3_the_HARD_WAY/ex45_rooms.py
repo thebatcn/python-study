@@ -15,6 +15,18 @@ class Corridor(room):
 
     def entry(self):
         print("进入了一小段狭窄的走廊，一端是客厅，另一端是去外面的大门。")
+        flag = True
+        while flag:
+            choices = input("你想进来？还是出去? ")
+            if choices == 'in':
+                flag = False
+                return 'living_room'
+            elif choices == 'out':
+                flag = False
+                return 'the_outside_world'
+            else:
+                print('输入错误，请输入 in 或者 out。')
+
 
 
 class Living_room(room):
