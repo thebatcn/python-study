@@ -10,8 +10,13 @@ class TestCalculator(unittest.TestCase):
 
     def testDivide02(self):
         cal = Calculator()
-        result = cal.divide(20, 0.5)
-        self.assertEqual(result, 40)
+        result = cal.divide(10 ,0.5)
+        self.assertEqual(result, 20)
+
+    def testDivide03(self):
+        cal = Calculator()
+        result = cal.divide(10, 0)
+        self.assertEqual(result, 0)
 
 
 if __name__ == '__main__':
