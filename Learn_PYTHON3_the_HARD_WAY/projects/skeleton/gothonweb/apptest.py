@@ -8,8 +8,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def fun1():
-    greeting = "Hello World."
-    return render_template("index.html", greeting=greeting)
+    greeting = "Hello boy."
+    return render_template("index.html",greeting=greeting)
 
 
 def fun2():
