@@ -7,6 +7,7 @@ app = Flask(__name__)
 
 @app.route('/hello', methods=['POST', 'GET'])
 def index():
+    greeting = 'Tank World.'
     if request.method == 'POST':
         name = request.form['name']
         greet = request.form['greet']
