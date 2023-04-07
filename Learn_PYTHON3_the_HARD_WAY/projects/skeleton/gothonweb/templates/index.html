@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Gothons Of Planet Percal #25</title>
-    </head>    
+
+<head>
+    <title>Gothons Of Planet Percal #25</title>
+</head>
+
 <body>
 
-{% if greeting %}
+    {% if greeting %}
     I just wanted to say
     <em style="color: green; font-size: 2em;">{{ greeting }}</em>.
-{% else %}    <em>Hello</em>, world!
-{% endif %}</body>
-<br/>
-<br>
-<a href = 'http://127.0.0.1:5000/hello'><em style="color: rgb(5, 231, 17)">重新输入表格</em></a>
+    {% else %} <em>Hello</em>, world!
+    {% endif %}
+</body>
+<br />
+<br />
+<a href='http://127.0.0.1:5000/hello'><em style="color: rgb(5, 231, 17)">重新输入表格</em></a>
 
-</html> 
+</html>
