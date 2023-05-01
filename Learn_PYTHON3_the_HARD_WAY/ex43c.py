@@ -8,7 +8,7 @@ class Child(Parent):
 
     def altered(self):
         print("Child Befor Parent altered()")
-        super(Child, selfi).altered()      #调用父类altered函数
+        super(Child,self).altered()      #调用父类altered函数
         print("Child After Parent altered()")
 
 
