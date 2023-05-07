@@ -2,8 +2,9 @@ def sumlen(x):
     if x ==[]:
         return 0
     else:
-        x.pop()
-        return 1 + sumlen(x)
+        # x.pop()
+        # return 1 + sumlen(x)
+        return 1 + sumlen(x[1:])
     
 a = [1,2,3,4,5]
 
