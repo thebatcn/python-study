@@ -4,6 +4,7 @@ def sum(x):
     # elif len(x)==1:
     #     return x[0]
     else:
+        # x[0] + sum(x[1:])  这样提示错误
         return x[0] + sum(x[1:])
 
 
