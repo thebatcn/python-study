@@ -1,0 +1,10 @@
+def sumlen(x):
+    if x ==[]:
+        return 0
+    else:
+        x.pop()
+        return 1 + sumlen(x)
+    
+a = [1,2,3,4,5]
+
+print(sumlen(a))
