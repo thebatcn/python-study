@@ -1,6 +1,6 @@
-以下是使用Python编写的文字游戏代码示例：
+# 以下是使用Python编写的文字游戏代码示例：
 
-```python
+# ```python
 class Scene:
     def __init__(self, description, options):
         self.description = description
@@ -56,6 +56,6 @@ lose_scene = Scene(
 )
 
 start_scene.play()
-```
+# ```
 
-这个Python版本的游戏与JavaScript版本的游戏基本相同，只是语法和一些细节有所不同。玩家可以通过输入数字来选择选项，选择会影响游戏的进程，最终会通关或者失败。
+# 这个Python版本的游戏与JavaScript版本的游戏基本相同，只是语法和一些细节有所不同。玩家可以通过输入数字来选择选项，选择会影响游戏的进程，最终会通关或者失败。
