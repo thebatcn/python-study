@@ -4,7 +4,10 @@ import time
 
 a = 1000
 
-print('asctime ',time.asctime(time.gmtime()))       # 获取当前时间字符串
+# time.asctime([tupletime])接受一个包含9个元素的时间元组作为参数（默认为当前时间），
+# 表示年、月、日、时、分、秒、星期、年内第几天和夏令时信息。
+# 而time.ctime([secs])接受一个时间戳（默认为当前时间戳）作为参数，表示自UNIX纪元以来的秒数。
+print('asctime ', time.asctime(time.gmtime()))       # 获取当前时间字符串
 print('asctime ',time.asctime())                    # 获取当前时间字符串
 print('ctime()',time.ctime())                       # 获取当前时间字符串
 print('ctime ',time.ctime(a))
@@ -16,4 +19,4 @@ print('time1 ',time.time())
 time.sleep(1)
 print('time2 ',time.time())
 
-print(time.strftime('%p%l:%M:%S',time.gmtime(time.time())))
+print(time.strftime('%p%H:%M:%S',time.gmtime(time.time())))
