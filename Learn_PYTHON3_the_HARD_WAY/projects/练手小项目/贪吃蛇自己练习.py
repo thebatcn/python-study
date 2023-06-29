@@ -33,13 +33,13 @@ while True:
     # 根据输入键盘来确定方向值
     key = input()
     match key:
-        case  'w' | 'W' if snake_head[1] > 0:
+        case  'w' | 'W' if snake_head[1] > 0 and direction !=(0,1):
             direction = (0, -1)
-        case 's' | 'S' if snake_head[1] < height:
+        case 's' | 'S' if snake_head[1] < height and direction !=(0,-1):
             direction = (0, 1) 
-        case 'a' | 'A' if snake_head[0] > 0:
+        case 'a' | 'A' if snake_head[0] > 0 and direction !=(1,0):
             direction = (-1, 0) 
-        case 'd' | 'D' if snake_head[0] <width:
+        case 'd' | 'D' if snake_head[0] <width and direction !=(-1,0):
             direction = (1, 0)
   
     # 更新snake_head
