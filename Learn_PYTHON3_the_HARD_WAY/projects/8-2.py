@@ -3,7 +3,7 @@ import sys
 
 SCREEN_SIZE = (640, 480)
 sprite_image_filename = "fugu.png"
-ball_filename = "ball2.png"
+ball_filename = "pydroball.png"
 
 pygame.init()
 screen = pygame.display.set_mode(SCREEN_SIZE, 0, depth=32)
@@ -15,7 +15,7 @@ ball = pygame.image.load(ball_filename)
 clock = pygame.time.Clock()
 
 x, y = 100.0, 100.0
-speed_x, speed_y = 130., 70.
+speed_x, speed_y = 240., 170.
 
 while True:
     for event in pygame.event.get():
@@ -25,7 +25,7 @@ while True:
     screen.fill((0,0,0))        
     screen.blit(ball,(x,y))
 
-    time_passed = clock.tick(60)
+    time_passed = clock.tick(1200)
     time_passed_second = time_passed / 1000.0
 
     x += time_passed_second * speed_x

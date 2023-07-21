@@ -18,6 +18,7 @@ while True:
     for ev in pygame.event.get():
         if ev.type == QUIT:
             pygame.quit()
+            sys.exit()
     clock.tick(60)
     surface.fill((0, 0, 0))
     ballrect = ballrect.move(speed)
