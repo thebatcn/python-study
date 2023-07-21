@@ -42,11 +42,11 @@ while True:
 
     screen.fill((0, 0, 0))
 
-    for dot in SNAKE:
-        if dot == SNAKE[0]:
-            pygame.draw.circle(screen,(255,165,0),dot,5)
+    for dot in SNAKE:  # 遍历SNAKE列表中的每个点
+        if dot == SNAKE[0]: # 检查当前点是否为蛇头
+            pygame.draw.circle(screen,(255,165,0),dot,5)     # 绘制一个半径为5的橙色蛇头
         else:
-            pygame.draw.circle(screen, (255, 0, 255), dot, 5)
+            pygame.draw.circle(screen, (255, 0, 255), dot, 5)   # 绘制一个半径为5的品红色蛇体
 
     pygame.draw.circle(screen, (0, 255, 0), FOOD, 5)
     clock.tick(10)
