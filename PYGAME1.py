@@ -18,5 +18,4 @@ while running:
         if event.type == pygame.QUIT:
             running = False
             pygame.quit()
-“it 一点都不简单。.
-dsdddsd
+
