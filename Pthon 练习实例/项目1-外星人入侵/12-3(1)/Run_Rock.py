@@ -1,4 +1,5 @@
-from Rock import Rock
+from rock import Rock
+import game_functions as gf
 import pygame
 import sys
 
@@ -10,16 +11,17 @@ def run_rock():
 
 	rock = Rock(screen)
 
-	print((rock.rect))
-	print(rock.screen_rect)
-	print(rock.Moveing_down)
+	# print((rock.rect))
+	# print(rock.screen_rect)
+	print(rock.Moving_right)
 
 	while True:
-		for event in pygame.event.get():
-			if event.type == pygame.QUIT:
-				pygame.quit()
-				sys.exit()
-		rock.blitme(screen)
+		gf.check_events(rock)
+		rock.update()
+		# print(rock.Moveing_down)
+		gf.update_screen(screen,rock)
+		pygame.display.flip()
+
 
 run_rock()
 
