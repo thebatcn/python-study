@@ -59,12 +59,15 @@ while True:
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_UP:
                 direction ='Up'
-            if event.key == pygame.K_SPACE:
+            elif event.key == pygame.K_SPACE:
                 bullet = Bullets(screen,rock_rect)
                 group.add(bullet)
                 # bullet.updata()
             elif event.key == pygame.K_DOWN:
                 direction ="Down"
+            elif event.key == pygame.K_q:
+                pygame.quit()
+                sys.exit()
         if event.type == pygame.KEYUP:
             if event.key == pygame.K_UP:
                 direction = "False"
