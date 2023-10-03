@@ -1,9 +1,10 @@
 import pygame
 import sys
 import settings
-
+import bullet
 SCREEN_SIZE = (640,480)
 
+bullets = bullet.Bullet()
 st = settings.Settings()
 pygame.init()
 screen = pygame.display.set_mode(SCREEN_SIZE,0,depth=32)
