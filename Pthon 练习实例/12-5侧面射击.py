@@ -15,22 +15,25 @@ print((screen_rect))
 rock_rect.bottom = screen_rect.bottom
 print(rock_rect)
 
-direction = "False"
+
+
+direction = False
 group = Group()
+man_group = Group()
 
 def update_rock(direction):
     if direction == 'Up' and rock_rect.y > 0:
-        rock_rect.y -= 2
+        rock_rect.y -= 1
     elif direction == 'Down' and rock_rect.bottom < 480:
-        rock_rect.y += 2
+        rock_rect.y += 1
     # print(rock_rect)
 
 class Bullets(Sprite):
     """docstring for Bullets"""
     def __init__(self, screen,rock_rect):
         super(Bullets, self).__init__()
-        self.y = rock_rect.y + rock_rect.width / 2
-        self.x = rock_rect.width
+        self.y =  rock_rect.centery
+        self.x = rock_rect.right
         self.screen = screen
             
     def update(self):
@@ -44,12 +47,29 @@ class Bullets(Sprite):
         pygame.draw.rect(self.screen, (255,0,0), (self.x, self.y, 10, 3))
         
 def update_bullets(bullets):
+    bullets.update()
     for bullet in bullets.copy():
         bullet.draw()
         if bullet.x > screen_rect.right:
             bullets.remove(bullet)
+    # print(len(bullets))
+class Aman(Sprite):
+    """docstring for Aman"""
+    def __init__(self, screen,x,y):
+        super(Aman, self).__init__()
+        self.x = x
+        self.y = y
+        self.screen = screen
+    def draw(self):
+        pygame.draw.rect(self.screen, (0,255,0), (self.x, self.y, 60, 60)) 
         
-bullet = Bullets(screen,rock_rect)
+        
+# bullet = Bullets(screen,rock_rect)
+aman = Aman(screen,500,100)
+aman1 = Aman(screen, 300,300)
+man_group.add(aman)
+man_group.add(aman1)
+
 
 while True:
     for event in pygame.event.get():
@@ -76,9 +96,13 @@ while True:
     screen.fill((255,255,255))
     screen.blit(rock_image,rock_rect)
     update_rock(direction)
-    group.update()
+    # group.update()
     update_bullets(group)
+    aman.draw()
+    aman1.draw()
     # group.draw()
     pygame.display.flip()
     # print(len(group))
+    # print(pygame.sprite.spritecollideany(aman1, group))
+
 
