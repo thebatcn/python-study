@@ -18,7 +18,7 @@ class Rain(Sprite):
         self.rect = self.image.get_rect()
         self.rect.x = x
         self.rect.y = y
-        self.speed = 0.2
+        self.speed = 0.1
         
         self.y = float(self.rect.y)
 
