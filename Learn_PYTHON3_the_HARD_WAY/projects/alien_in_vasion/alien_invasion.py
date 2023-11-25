@@ -15,7 +15,7 @@ def run_game():
     pygame.display.set_caption("Alien Vasion")
     # 创建一艘飞船
     ship = Ship(ai_settings, screen)
-    # 创建一个用于储存子弹的编组
+    # 创建一个用于储存子弹的编组  
     bullets = Group()
     aliens = Group()
     # alien = Alien(ai_settings, screen)
@@ -24,8 +24,8 @@ def run_game():
     while True:
         gf.check_events(ai_settings, screen, ship, bullets)
         ship.update()
-        gf.update_bullets(aliens, bullets)
-        gf.update_aliens(ai_settings, aliens)
+        gf.update_bullets(ai_settings, screen, ship, aliens, bullets)
+        gf.update_aliens(ai_settings,ship, aliens)
         gf.update_screen(ai_settings, screen, ship, aliens, bullets)
 
         # pygame.display.flip()
