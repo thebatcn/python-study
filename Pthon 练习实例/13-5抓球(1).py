@@ -43,6 +43,8 @@ pygame.display.set_caption('13-5抓球')
 clock = time.Clock()
 
 ball = Ball(screen)
+ballsprint = pygame.sprite.Group()
+
 paddle = Paddle(screen)
 print("\n",paddle.pos)
 while True:
@@ -58,7 +60,8 @@ while True:
             if event.key==pygame.K_RIGHT:
                 paddle.pos[0]+=10
                 paddle.rect = pygame.Rect(paddle.pos[0],paddle.pos[1],100,10)
-    
+            # if event.key == pygame.K_SPACE:
+            #     ballsprint.add(Ball(screen))    
     screen.fill((0,0,0))
     ball.draw()
     paddle.draw()
@@ -66,4 +69,4 @@ while True:
     ball.update()
     clock.tick(60)
     pygame.display.update()
-    
+   
