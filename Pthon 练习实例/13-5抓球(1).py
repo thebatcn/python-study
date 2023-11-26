@@ -19,8 +19,10 @@ class Ball(Sprite):
         pygame.draw.circle(screen,(255,0,0),self.pos,self.radius)
 
     def update(self):
-        if self.pos[1] > 470:
+        if self.pos[1] > 470 :
             self.pos[1]=0
+        elif self.speed < 0 and self.pos[1] < 10:
+            self.speed = abs(self.speed)
         else:
             self.pos[1] += self.speed
             self.rect = pygame.Rect(self.pos[0],self.pos[1],self.radius,self.radius)
@@ -36,6 +38,14 @@ class Paddle(Sprite):
     
     def update(self):
         self.rect = pygame.Rect(self.pos[0],self.pos[1],100,10)
+        
+def is_collsion(ball,paddle):
+    if ball.rect.colliderect(paddle.rect):
+        ball.speed = -ball.speed
+        return True
+    else:
+        return False
+# 游戏主循环
 SCREEN_SIZE = (640,480)
 pygame.init()
 screen = pygame.display.set_mode(SCREEN_SIZE,0,depth=32)
@@ -65,6 +75,7 @@ while True:
     screen.fill((0,0,0))
     ball.draw()
     paddle.draw()
+    is_collsion(ball,paddle)
     print("\n",paddle.pos)
     ball.update()
     clock.tick(60)
