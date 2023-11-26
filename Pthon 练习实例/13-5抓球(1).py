@@ -25,26 +25,17 @@ class Ball(Sprite):
             self.pos[1] += self.speed
             self.rect = pygame.Rect(self.pos[0],self.pos[1],self.radius,self.radius)
             
-
-class Block(Sprite):
-    def __init__(self,pos):
-        super().__init__()
-        self.pos = pos
-        self.rect = pygame.Rect(self.pos[0],self.pos[1],10,100)
-    def draw(self):
-        pass
 class Paddle(Sprite):
-    def __init__(self):
+    def __init__(self,screen):
         super().__init__()
+        self.screen = screen
         self.pos = [320,460]
-        self.rect = pygame.Rect(self.pos[0],self.pos[1],10,100)
-    def move(self,key):
-        if key[pygame.K_UP]:
-            self.pos[1] -= 10
-        if key[pygame.K_DOWN]:
-            self.pos[1] += 10
-        self.rect = pygame.Rect(self.pos[0],self.pos[1],10,100)
-
+        self.rect = pygame.Rect(self.pos[0],self.pos[1],100,10)
+    def draw(self):
+        pygame.draw.rect(screen,(0,255,0),self.rect)
+    
+    def update(self):
+        self.rect = pygame.Rect(self.pos[0],self.pos[1],100,10)
 SCREEN_SIZE = (640,480)
 pygame.init()
 screen = pygame.display.set_mode(SCREEN_SIZE,0,depth=32)
@@ -52,16 +43,26 @@ pygame.display.set_caption('13-5抓球')
 clock = time.Clock()
 
 ball = Ball(screen)
-print("\n",ball.pos)
+paddle = Paddle(screen)
+print("\n",paddle.pos)
 while True:
     for event in pygame.event.get():
         if event.type==pygame.QUIT:
             pygame.quit()
             sys.exit()
-        # if event.type==pygame.KEYDOWN:
+        if event.type==pygame.KEYDOWN:
+            if event.key==pygame.K_LEFT:
+                paddle.pos[0]-=10
+                paddle.rect = pygame.Rect(paddle.pos[0],paddle.pos[1],100,10)
+
+            if event.key==pygame.K_RIGHT:
+                paddle.pos[0]+=10
+                paddle.rect = pygame.Rect(paddle.pos[0],paddle.pos[1],100,10)
+    
     screen.fill((0,0,0))
     ball.draw()
-    # print("\n",ball.pos)
+    paddle.draw()
+    print("\n",paddle.pos)
     ball.update()
     clock.tick(60)
     pygame.display.update()
