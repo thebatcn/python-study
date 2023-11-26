@@ -1,3 +1,10 @@
+# 通过这个方法更新位置来生成动画
+# rect = pygame.Rect(100, 100, 50, 50)
+# rect.move_ip(100, 100) 
+# 或者下面这个方法来更新
+# rect =rect.move(10,10)
+
+
 import pygame
 from pygame.locals import *
 from sys import exit
@@ -40,3 +47,4 @@ while True:
 
 
     pygame.display.update()
+    
