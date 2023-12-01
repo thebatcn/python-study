@@ -37,4 +37,6 @@ class Ship():
         self.screen.blit(self.image, self.rect)
         # pygame.display.flip()
   
-    
+    def center_ship(self):
+        """飞船居中"""
+        self.rect.centerx = self.screen_rect.centerx
