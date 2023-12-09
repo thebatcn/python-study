@@ -4,6 +4,8 @@ from ship import Ship
 import game_functions as gf
 from pygame.sprite import Group
 from game_stats import GameStats
+from button import Button
+
 
 def run_game():
     ai_settings = Settings()
@@ -13,6 +15,8 @@ def run_game():
         (ai_settings.screen_width, ai_settings.screen_height)
     )
     pygame.display.set_caption("Alien Vasion")
+    #创建一个按钮
+    play_button = Button(ai_settings,screen,"Play")
     # 创建一艘飞船
     ship = Ship(ai_settings, screen)
     # 创建一个用于储存子弹的编组  
@@ -30,7 +34,7 @@ def run_game():
             ship.update()
             gf.update_bullets(ai_settings, screen, ship, aliens, bullets)
             gf.update_aliens(ai_settings,stats,screen,ship, aliens,bullets)
-        gf.update_screen(ai_settings, screen, ship, aliens, bullets)
+        gf.update_screen(ai_settings, screen,stats, ship, aliens, bullets,play_button)
 
         # pygame.display.flip()
 
