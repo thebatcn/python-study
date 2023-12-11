@@ -2,5 +2,8 @@
     "cSpell.words": [
         "blit"
     ],
-    "python.envFile": "${workspaceFolder}/.env"
+    "python.envFile": "${workspaceFolder}/.env",
+    "files.associations": {
+        "stdio.h": "c"
+    }
 }
