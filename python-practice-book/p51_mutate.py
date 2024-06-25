@@ -23,12 +23,13 @@ def mutate(word):  #AI生成的例子
 
     return mutations
 
-
+if __name__ == "__main__":
+    
 # Testing the function
-words = mutate("hello")
-print("helol" in words)  # True
-print("helko" in words)  # True
-print(
-    "helol1" in words
-)  # This won't be true because we're only considering letters from a to z.
-print("hell" in words)
+    words = mutate("hello")
+    print("helol" in words)  # True
+    print("helko" in words)  # True
+    print(
+        "helol1" in words
+    )  # This won't be true because we're only considering letters from a to z.
+    print("hell" in words)
