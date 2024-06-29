@@ -1,0 +1,2 @@
+print('termux Python')
+
