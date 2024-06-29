@@ -7,6 +7,6 @@ def valuesort(D):
     sorted_dict = sorted(D.items(), key=lambda x:x[0])
     return [value for key,value in sorted_dict]
     
-onedict = {'x':1,'y':2,'a':3}
+cc
 
 print(valuesort(onedict))
