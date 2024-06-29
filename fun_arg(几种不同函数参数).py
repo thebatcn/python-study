@@ -19,6 +19,7 @@ function(134, 'a', arg_k1="abcdefg", arg_k2='[[[[]]]]')
 
 
 def foo(p1, *p2, p_k):
+    """*args形参后的任何形式参数只能是仅限关键字参数，即只能用作关键字参数，不能用作位置参数。"""
     print(p1)
     print(p2)
     print(p_k)
