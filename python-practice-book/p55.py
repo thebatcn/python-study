@@ -20,4 +20,19 @@ def anagrams(words):
 
 # 示例：
 words_list = ['eat', 'ate', 'done', 'tea', 'soup', 'node']
-print(anagrams(words_list))
+word_dict = {}
+# print(anagrams(words_list))
+result_no = []
+new_list =[''.join(sorted(w)) for w in words_list]
+print(new_list)
+
+for w in words_list:
+    if sorted(w) in new_list:
+        continue
+    else:
+        result_no.append(w)
+        words_list.remove(w)
+
+print(words_list)
+print(result_no)
+"""for w in words:  word_dict"""
