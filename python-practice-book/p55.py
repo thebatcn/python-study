@@ -24,9 +24,9 @@ words_list = ['eat', 'ate', 'done', 'tea', 'soup', 'node','heart', 'earth', 'hat
 word_dict = {}
 # print(anagrams(words_list))
 def anagrams(word_list):
-    result_no = []
-    result_have=[]
-    new_list =[''.join(sorted(w)) for w in words_list]
+    # result_no = []
+    # result_have=[]
+    # new_list =[''.join(sorted(w)) for w in words_list]
     # print(new_list)
     """ 版本1
     # for w in words_list:
@@ -40,7 +40,9 @@ def anagrams(word_list):
     for w in words_list:
         sort_w ="".join(sorted(w))
         word_dict.setdefault(sort_w, []).append(w)
-    return word_dict.values()
+    # return word_dict.values()
+        sorted_result = dict((sorted(word_dict.items(), key=lambda x: len(x[0]))))
+    return list(sorted_result.values())
 #目前实现分辨单词是否anagrams，并且输出的功能。
 #改进版，实现用字典储存结果，根据单词长度分别储存
 #最终版，字典储存，能根据构成字母类型一致的，储存在一组。长度可以作为排行依据。
